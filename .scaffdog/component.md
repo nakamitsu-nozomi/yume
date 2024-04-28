@@ -44,3 +44,8 @@ import { {{ inputs.name | pascal }} } from './{{ inputs.name | pascal }}';
 export default { component: {{ inputs.name | pascal }} };
 export const Overview = { args: {} };
 ```
+# `src/{{ inputs.dir | camel }}/{{ inputs.dir == "features" ? inputs.feature : null }}/{{ inputs.dir == "features" ? "components" : null }}/{{ inputs.name | pascal }}/{{ inputs.name | pascal }}.module.css`
+
+```css
+
+```
