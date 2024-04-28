@@ -1,5 +1,4 @@
 import type { ChangeEvent, FC } from 'react';
-import './CheckBox.module.css';
 
 interface Props {
   id: string;
