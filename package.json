@@ -11,17 +11,23 @@
     "styleLint": "stylelint **/*.css",
     "format": "biome format --write ./",
     "lint:fix": "biome check --apply ./",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "scaffdog": "scaffdog generate"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.32.0",
+    "@tanstack/react-router": "^1.31.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@biomejs/biome": "1.7.1",
+    "@tanstack/router-devtools": "^1.31.1",
+    "@tanstack/router-vite-plugin": "^1.30.0",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@vitejs/plugin-react": "^4.2.1",
+    "scaffdog": "^3.0.0",
     "stylelint": "^16.4.0",
     "stylelint-config-recess-order": "^5.0.1",
     "stylelint-config-standard": "^36.0.0",
