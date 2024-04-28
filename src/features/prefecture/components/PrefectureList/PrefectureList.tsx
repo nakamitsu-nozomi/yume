@@ -1,7 +1,7 @@
 import { type ChangeEvent, type FC, Suspense, useCallback, useEffect, useState } from 'react';
 import { CheckBox } from '../../../../ui/Checkbox';
-import { type AggregatePrefecture, createAggregatePrefecture } from '../../../utils/prefecture.ts';
 import { useGetPrefectureListSuspenseQuery } from '../../domain/hooks.ts';
+import { type AggregatePrefecture, createAggregatePrefecture } from '../../utils/prefecture.ts';
 import styles from './PrefectureList.module.css';
 
 interface Props {

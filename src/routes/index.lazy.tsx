@@ -1,7 +1,7 @@
-import { createLazyFileRoute } from '@tanstack/react-router';
-import { useCallback } from 'react';
-import { PrefectureList } from '../features/prefecture/components/PrefectureList';
-import type { AggregatePrefecture } from '../features/utils/prefecture.ts';
+import {createLazyFileRoute} from '@tanstack/react-router';
+import {useCallback} from 'react';
+import {PrefectureList} from '../features/prefecture/components/PrefectureList';
+import type {AggregatePrefecture} from '../features/prefecture/utils/prefecture.ts';
 
 const Index = () => {
   const handleChecked = useCallback((aggregatePrefecture: AggregatePrefecture) => {

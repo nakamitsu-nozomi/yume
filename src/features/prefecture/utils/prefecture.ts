@@ -1,4 +1,4 @@
-import type { Prefecture } from '../prefecture/domain/entity.ts';
+import type {Prefecture} from '../domain/entity.ts';
 
 export type AggregatePrefecture = Prefecture & {
   isChecked: boolean;
