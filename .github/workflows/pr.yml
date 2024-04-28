@@ -1,0 +1,29 @@
+name: PR
+on:
+  pull_request:
+jobs:
+  pr:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 7
+      - name: Install dependencies
+        run: pnpm i
+
+      - name: Run lint
+        run: pnpm run lint && pnpm run styleLint
+
+      - name: Run TypeCheck
+        run: pnpm run typecheck
+
+      - name: Run formatCheck
+        run: pnpm run format
