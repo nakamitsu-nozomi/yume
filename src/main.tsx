@@ -1,7 +1,8 @@
 import { RouterProvider, createRouter } from '@tanstack/react-router';
-import { StrictMode } from 'react';
+import { StrictMode, Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 // Import the generated route tree
 import { routeTree } from './routeTree.gen';
 
@@ -15,13 +16,18 @@ declare module '@tanstack/react-router' {
   }
 }
 
+const queryClient = new QueryClient();
 // Render the app
 const rootElement = document.getElementById('root');
 if (rootElement != null) {
   const root = ReactDOM.createRoot(rootElement);
   root.render(
     <StrictMode>
-      <RouterProvider router={router} />
+      <QueryClientProvider client={queryClient}>
+        <Suspense fallback={<p>読み込み中</p>}>
+          <RouterProvider router={router} />
+        </Suspense>
+      </QueryClientProvider>
     </StrictMode>,
   );
 }
