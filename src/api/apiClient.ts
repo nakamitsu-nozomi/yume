@@ -1,5 +1,5 @@
-export const apiClient = async (path: string) => {
-  const response = await fetch(`https://opendata.resas-portal.go.jp/${path}`, {
+export const apiClient = async (path: string, query?: URLSearchParams) => {
+  const response = await fetch(`https://opendata.resas-portal.go.jp/${path}?${query}`, {
     headers: {
       'x-api-key': import.meta.env.VITE_RESAS_API_KEY,
     },
