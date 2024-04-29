@@ -1,5 +1,6 @@
 import { type FC, Suspense } from 'react';
 import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import styles from './PrefectureCharts.module.css';
 
 export type Props = {
   dataKeys: string[];
@@ -8,8 +9,8 @@ export type Props = {
 
 export const PrefectureCharts: FC<Props> = ({ dataKeys, data }) => {
   return (
-    <Suspense>
-      <ResponsiveContainer width="100%" height="100%" aspect={1}>
+    <Suspense fallback={<p>読み込み中</p>}>
+      <ResponsiveContainer width="50%" height="50%" aspect={1} className={styles.responsiveContainer}>
         <LineChart
           data={data}
           margin={{
